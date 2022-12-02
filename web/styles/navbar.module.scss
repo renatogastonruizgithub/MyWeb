@@ -1,0 +1,54 @@
+.menuLinks{
+    display: none ;
+    color: aqua;
+}
+.logoAndMenu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.containerNav{
+margin-top: 2rem;
+
+}
+
+
+ @media only screen and (max-width: 768px){
+
+
+ }
+
+
+@media only screen and (min-width: 769px) and (max-width: 2000px){
+.contentMenuLinks{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.menuLinks{
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+   a{
+        font-size: 1.5rem;
+        &:hover{
+            color: #000;
+            background-color: blue;
+            cursor: pointer;
+        }
+   }
+} 
+.containerNav{
+display: grid;
+grid-template-columns: repeat(2, 1fr); 
+position: fixed;
+width: 80%;
+left: 10%;
+z-index: 4000;
+}
+.logoAndMenu{
+    span{
+        display: none;
+    }
+}
+}
