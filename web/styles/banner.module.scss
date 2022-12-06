@@ -1,13 +1,267 @@
-.imgBanner{
+@import "../styles/colors.scss";
+
+
+
+.imgBanner {
     height: 100vh;
-    background-color: black;
-    
-    img{
-         background-color: cadetblue;
-    border-radius: 50%;
-    height: 200px;
-    width: 200px;
-    object-fit: cover;
+    background-color: $backgroundBlue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        width: 2px;
+        height: 15vh;
+        background: linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364);
+        background: linear-gradient($orange, $orange 10%, #196c2e 70%, #2ea043 80%, #56d364);
     }
-   
+
+    .contentImgText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 89%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3rem;
+    }
+
+    .contentImg {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        padding: 1px;
+        background-color: $orange;
+        overflow: hidden;
+
+        img {
+            background-color: $orange;
+            mix-blend-mode: luminosity;
+            border-radius: 50%;
+            height: 140px;
+            width: 140px;
+            object-fit: contain;
+        }
+    }
+
+    .bannerTexts {
+        position: relative;
+        margin-top: 2rem;
+        color: $white;
+        padding: 0 1rem;
+        text-align: justify;
+        overflow-wrap: break-word;
+
+        h1 {
+            font-size: 1.2rem;
+
+        }
+
+        h2 {
+            font-size: 2rem;
+            opacity: .7;
+            margin-top: 1rem;
+        }
+
+        h3 {
+            font-size: 1.9rem;
+            opacity: .7;
+            -webkit-text-stroke: 1px $white;
+            -webkit-text-fill-color: transparent;
+            margin-top: .5rem;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .imgBanner {
+        &::before {
+            left: 3%;
+        }
+
+        .contentImg {
+            height: 200px;
+            width: 200px;
+
+            img {
+                height: 200px;
+                width: 200px;
+            }
+        }
+
+        .bannerTexts {
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            h2 {
+                font-size: 2.1rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .imgBanner {
+        background-color: $backgroundBlue;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 11%;
+            background-color: $orange;
+            z-index: 0;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 3px;
+            height: 7rem;
+        }
+
+        .contentImgText {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 0;
+        }
+
+        .contentImg {
+            height: 100vh;
+            width: 50%;
+            border-radius: 0;
+            background-color: $orange;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                border-radius: 0;
+                background-color: $orange;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .bannerTexts {
+            text-align: left;
+            margin-top: 5rem;
+
+            h1 {
+                font-size: 2.5rem;
+
+            }
+
+            h2 {
+                font-size: 3.2rem;
+                margin-top: 2rem;
+
+            }
+
+            h3 {
+                font-size: 2.4rem;
+                margin-top: .2rem;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 2560px) {
+
+    .imgBanner {
+        background-color: $backgroundBlue;
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 11%;
+            background-color: $orange;
+            z-index: 0;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 3px;
+            height: 7rem;
+        }
+
+        .contentImgText {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 0;
+        }
+
+        .contentImg {
+            height: 100vh;
+            width: 50%;
+            border-radius: 0;
+            background-color: $orange;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                border-radius: 0;
+                background-color: $orange;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .bannerTexts {
+            text-align: left;
+            margin-top: 5rem;
+
+            h1 {
+                font-size: 2.5rem;
+                color: $white
+            }
+
+            h2 {
+                font-size: 4rem;
+                color: $white;
+                opacity: .7;
+                margin-top: 3rem;
+                letter-spacing: 2px;
+            }
+
+            h3 {
+                font-size: 2.8rem;
+                color: $white;
+                opacity: .7;
+                margin-top: .8rem;
+                letter-spacing: 2px;
+            }
+        }
+    }
 }
