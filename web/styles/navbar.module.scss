@@ -1,56 +1,183 @@
-.menuLinks{
-    display: none ;
-    color: aqua;
+@import "../styles/colors.scss";
+
+$heightMenu: 32px;
+$heightBar: 2px;
+
+.menuLinks {
+    display: none;
+    color: $white;
 }
-.logoAndMenu{
+
+.logoAndMenu {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.containerNav{
-position: fixed;
-width: 89%;
-z-index: 4000;
-top: 2rem;
-}
 
+    >div {
+        color: $white;
+        position: relative;
+        width: $heightMenu;
+        height: $heightMenu;
 
- @media only screen and (max-width: 768px){
-
-
- }
-
-
-@media only screen and (min-width: 769px) and (max-width: 2000px){
-.contentMenuLinks{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.menuLinks{
-    display: flex;
-    align-items: center;
-    justify-content:flex-end;
-   a{
-        font-size: 1.5rem;
-        &:hover{
-            color: #000;
-            background-color: blue;
-            cursor: pointer;
+        >span:nth-child(1) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 20px;
+            }
         }
-   }
-} 
-.containerNav{
-display: grid;
-grid-template-columns: repeat(2, 1fr); 
-position: fixed;
-width: 80%;
-left: 10%;
-z-index: 4000;
-}
-.logoAndMenu{
-    span{
-        display: none;
+
+        >span:nth-child(2) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                border-radius: 20px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        >span:nth-child(3) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateX(-20%);
+                border-radius: 20px;
+            }
+        }
     }
 }
+
+.containerNav {
+    position: fixed;
+    width: 89%;
+    z-index: 4000;
+    top: 2rem;
+    left: 5.5%;
+}
+
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .contentMenuLinks {
+        .logoAndMenu {
+            >div {
+                display: none;
+            }
+        }
+
+        .menuLinks:nth-child(4) {
+
+            a {
+                color: $backgroundBlue;
+            }
+        }
+
+        a {
+            margin-left: 1rem;
+
+            &::before {
+                position: absolute;
+                content: " ";
+                z-index: 2000;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: $white;
+                bottom: -6px;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                    animation: slidein .4s ease-in
+                }
+
+            }
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .contentMenuLinks {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .menuLinks:nth-child(4) {
+            a {
+                color: $backgroundBlue;
+            }
+        }
+
+        a {
+            font-size: 1.5rem;
+            position: relative;
+            cursor: pointer;
+
+            &::before {
+                position: absolute;
+                content: " ";
+                z-index: 2000;
+                left: 0;
+                width: 0;
+                height: 3px;
+                background-color: $white;
+                bottom: -6px;
+            }
+
+            &:hover {
+                &::before {
+                    width: 100%;
+                    animation: slidein .4s ease-in
+                }
+
+            }
+        }
+    }
+
+    .menuLinks {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .containerNav {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        position: fixed;
+        width: 80%;
+        left: 10%;
+        z-index: 4000;
+    }
+
+    .logoAndMenu {
+        >div {
+            display: none;
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
 }
