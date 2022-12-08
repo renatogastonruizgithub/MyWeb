@@ -1,5 +1,8 @@
 @import "../styles/colors.scss";
 
+$heightMenu: 32px;
+$heightBar: 2px;
+
 .menuLinks {
     display: none;
     color: $white;
@@ -10,8 +13,51 @@
     align-items: center;
     justify-content: space-between;
 
-    span {
+    >div {
         color: $white;
+        position: relative;
+        width: $heightMenu;
+        height: $heightMenu;
+
+        >span:nth-child(1) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                position: absolute;
+                left: 0;
+                top: 0;
+                border-radius: 20px;
+            }
+        }
+
+        >span:nth-child(2) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                border-radius: 20px;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        >span:nth-child(3) {
+            &::before {
+                content: " ";
+                background-color: $white;
+                height: $heightBar;
+                width: $heightMenu;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateX(-20%);
+                border-radius: 20px;
+            }
+        }
     }
 }
 
@@ -26,6 +72,12 @@
 
 @media only screen and (min-width: 769px) and (max-width: 1024px) {
     .contentMenuLinks {
+        .logoAndMenu {
+            >div {
+                display: none;
+            }
+        }
+
         .menuLinks:nth-child(4) {
 
             a {
@@ -114,7 +166,7 @@
     }
 
     .logoAndMenu {
-        span {
+        >div {
             display: none;
         }
     }

@@ -3,8 +3,15 @@ import Link from "next/link";
 import Image from "next/Image";
 import logo from "../../public/logoNegro.jpg";
 import styles from "../../styles/navbar.module.scss";
+import Menu from "../shareds/menuMobile";
+import { useState } from "react";
+
 export default function Navbar() {
-  const links = ["about", "Projects", "certificates", "contact"];
+  const links = ["About", "Projects", "Certificates", "Contact"];
+
+  const[menu, setMenu]=useState(false)
+
+
   return (
     <>
       <Head>
@@ -22,7 +29,11 @@ export default function Navbar() {
               width={50}
               height={50}
             />
-            <span>Menu</span>
+            <div onClick={() => setMenu(!menu)}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
           </div>
 
           <div className={styles.contentMenuLinks}>
@@ -36,7 +47,30 @@ export default function Navbar() {
             })}
           </div>
         </div>
+        <Menu 
+          menu={menu}
+          setMenu={setMenu}
+        >
+          <div>
+              {              
+            links.map((item) => {
+              return (              
+                    <li key={item} >
+                    {/* <Link ></Link> */}
+                    <a>{item}</a>
+                  </li>
+                );
+              })
+              }
+          </div>
+       
+          <span onClick={() => setMenu(!menu)}>
+            <span></span>
+            <span></span>
+          </span>
+        </Menu>
       </section>
+      
     </>
   );
 }
