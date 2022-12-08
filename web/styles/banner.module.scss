@@ -18,8 +18,8 @@
         left: 1rem;
         width: 2px;
         height: 15vh;
-        background: linear-gradient(#d2a8ff, #a371f7 10%, #196c2e 70%, #2ea043 80%, #56d364);
-        background: linear-gradient($orange, $orange 10%, #196c2e 70%, #2ea043 80%, #56d364);
+        background: linear-gradient(#d2a8ff, #a371f7 10%, $white 70%, $orange 80%, $orange);
+        background: linear-gradient(rgba(227, 227, 227, 0.768), $white 30%, $orange 70%, $orange 80%, $orange);
     }
 
     .contentImgText {
@@ -30,7 +30,7 @@
         width: 89%;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 3rem;
+        margin-top: 5rem;
     }
 
     .contentImg {
@@ -60,22 +60,23 @@
         overflow-wrap: break-word;
 
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
 
         }
 
         h2 {
-            font-size: 2rem;
-            opacity: .7;
-            margin-top: 1rem;
+            font-size: 1.4rem;
+            opacity: .8;
+            margin-top: 2rem;
         }
 
         h3 {
-            font-size: 1.9rem;
+            font-size: 1.5rem;
             opacity: .7;
             -webkit-text-stroke: 1px $white;
             -webkit-text-fill-color: transparent;
             margin-top: .5rem;
+            letter-spacing: 2px;
         }
     }
 }
