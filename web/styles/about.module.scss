@@ -1,0 +1,212 @@
+@import "../styles/colors.scss";
+
+.containerAbout {
+    padding: 0 1rem;
+    color: $backgroundBlue;
+
+    p {
+        font-size: 1.5rem;
+        overflow-wrap: break-word;
+        text-align: justify;
+        line-height: 2rem;
+        opacity: .8;
+    }
+
+    .containerTitle {
+        position: relative;
+
+        h1 {
+            font-size: 3rem;
+            color: $backgroundBlue;
+            margin-bottom: 1.2rem;
+        }
+
+        i {
+            position: absolute;
+            left: -2.1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            color: $violet;
+
+        }
+    }
+
+    >div {
+        margin-top: 1.5rem;
+
+        i {
+            color: $violet;
+            font-size: 1.8rem;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+    }
+
+}
+
+.containerSkills {
+    padding: 0 1rem;
+    padding-top: 4rem;
+
+    h2 {
+        color: $backgroundBlue;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+.sectionAbout {
+    background-color: $white;
+    position: relative;
+    padding: 3rem 0;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 7%;
+        background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 20%, $white);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient($white, $violet 40%, #8f72c9 20%, $violet 80%, $violet);
+    }
+
+}
+
+//grid desktop laptop
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .sectionAbout {
+        >section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 6rem;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 48em) {
+
+
+    .containerAbout {
+        padding: 0;
+
+        .containerTitle {
+            i {
+                left: -2.2rem;
+            }
+        }
+    }
+
+    .containerSkills {
+        padding-top: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sectionAbout {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 11%;
+            background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 20%, $white);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 26vh;
+            left: 3%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(#f8f8f8 10%, #8f72c9 60%, #8d6fc9 50%, #8f72c9 80%, $violet);
+
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .containerAbout {
+        padding: 0;
+
+        >div {
+            margin-top: 1.9rem;
+
+            i {
+                font-size: 2rem;
+                margin-right: 1.2rem;
+            }
+        }
+
+        .containerTitle {
+
+            h1 {
+                font-size: 5rem;
+                color: $backgroundBlue;
+                margin-bottom: 1.2rem;
+            }
+
+            i {
+                left: -17%;
+                top: 0;
+                transform: translateY(60%);
+                font-size: 2rem;
+                z-index: 2;
+            }
+        }
+    }
+
+    .containerSkills {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            color: $backgroundBlue;
+            font-size: 2rem;
+        }
+    }
+
+    .sectionAbout {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 14%;
+            background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 20%, $white);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 26vh;
+            left: 5%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(#f8f8f8 10%, #8f72c9 60%, #8d6fc9 50%, #8f72c9 80%, $violet);
+        }
+
+
+
+    }
+
+}
