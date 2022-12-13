@@ -1,0 +1,49 @@
+ @import "../styles/colors.scss";
+
+ .contentSkill {
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+     justify-content: space-between;
+
+     .skill {
+         display: inline-flex;
+         align-items: center;
+         background-color: $backgroundBlue;
+         margin-bottom: .8rem;
+         height: 40px;
+         position: relative;
+         overflow: hidden;
+         color: $white;
+         border-radius: 25px;
+         border: none;
+         position: relative;
+         padding-right: .3rem;
+
+         p {
+             width: 100%;
+             margin: 0;
+             padding: 0 .7rem;
+             font-size: 1rem;
+             color: $white;
+         }
+
+         >div {
+             height: 40px;
+             width: 40px;
+             display: block;
+             position: relative;
+             overflow: hidden;
+
+
+             img {
+                 height: 100%;
+                 width: 100%;
+                 display: block;
+                 object-fit: contain;
+
+             }
+         }
+
+     }
+ }

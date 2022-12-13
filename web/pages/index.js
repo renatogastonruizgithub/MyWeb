@@ -1,4 +1,5 @@
 import Layout from "../components/layout/layout";
+import About from "../components/sections/about";
 import Banner from "../components/sections/banner";
 
 export default function Home() {
@@ -6,8 +7,8 @@ export default function Home() {
     <>
       <Layout>
         <Banner />
-        <h1>este es el manin </h1>
+        <About />
       </Layout>
     </>
-  );
+  )
 }
