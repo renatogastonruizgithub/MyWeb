@@ -1,0 +1,28 @@
+.containerButton {
+    background-color: #D36B00;
+    border: #D36B00;
+    border-radius: 25px;
+    padding: 12px 30px;
+    margin-top: 2rem;
+    font-weight: 500;
+}
+
+@media only screen and (max-width: 768px) {
+    .botonDestokp {
+        display: none;
+    }
+
+    .containerButton {
+        margin-top: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .botonMobile {
+        display: none;
+    }
+
+    .containerButton {
+        margin-top: 3rem;
+    }
+}
