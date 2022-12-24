@@ -4,7 +4,7 @@ import "../styles/colors.scss";
 function MyApp({ Component, pageProps }) {
   return (
     <ProviderComponent>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </ProviderComponent>
   );
 }
