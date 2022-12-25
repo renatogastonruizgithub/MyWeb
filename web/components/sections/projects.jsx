@@ -4,7 +4,7 @@ import Botn, { Buttons } from "../../components/shareds/buton";
 const Projects = () => {
     const { list } = usePortfolio();
     return (
-        <section className={styles.sectionProjects}>
+        <section className={styles.sectionProjects} id="Projects">
             <div className="container">
                 <div className={styles.containerTitle}>
                     <h1>Proyectos</h1>
