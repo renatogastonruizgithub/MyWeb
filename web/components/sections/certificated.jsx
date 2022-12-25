@@ -15,7 +15,7 @@ const Certificated = () => {
     const swiper = useSwiper();
     const { list } = usePortfolio();
     return (
-        <section className={styles.containerCertificated}>
+        <section className={styles.containerCertificated} id="Certificates">
             <section className='container'>           
                 <div className={styles.containerTitle}>
                         <h1>Certificateds</h1>
