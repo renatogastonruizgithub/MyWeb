@@ -5,12 +5,13 @@ import logo from "../../public/logoNegro.jpg";
 import styles from "../../styles/navbar.module.scss";
 import Menu from "../shareds/menuMobile";
 import { useState } from "react";
+import { useRouter } from 'next/navigation';
 
 export default function Navbar() {
   const links = ["About", "Projects", "Certificates", "Contact"];
-
+  const router = useRouter();
   const[menu, setMenu]=useState(false)
-
+ 
 
   return (
     <>
@@ -29,6 +30,7 @@ export default function Navbar() {
               alt="Desarrollador web"
               width={50}
               height={50}
+               onClick={() => router.push('/')}
             />
             <div onClick={() => setMenu(!menu)}>
               <span></span>
@@ -41,8 +43,7 @@ export default function Navbar() {
             {links.map((item) => {
               return (
                 <li key={item} className={styles.menuLinks}>
-                  {/* <Link ></Link> */}
-                  <a>{item}</a>
+                  <Link href={`#${item}`}> {item}</Link>                 
                 </li>
               );
             })}
@@ -57,8 +58,7 @@ export default function Navbar() {
             links.map((item) => {
               return (              
                     <li key={item} >
-                    {/* <Link ></Link> */}
-                    <a>{item}</a>
+                     <Link href={`#${item}`}  onClick={() => setMenu(!menu)}>{item}</Link>   
                   </li>
                 );
               })

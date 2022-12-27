@@ -1,0 +1,39 @@
+@import "../styles/colors.scss";
+
+.containerCard {
+    margin: 1rem 0;
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    border-radius: 20px;
+    box-shadow: 14px 7px 18px -5px rgba(74, 68, 68, 0.31);
+    -webkit-box-shadow: 14px 7px 18px -5px rgba(74, 68, 68, 0.31);
+    -moz-box-shadow: 14px 7px 18px -5px rgba(74, 68, 68, 0.31);
+
+    .cardImg {
+
+        overflow: hidden;
+        display: grid;
+        place-items: center;
+        border-radius: 20px;
+    }
+
+    .cardBody {
+        padding: 1rem;
+        color: $backgroundBlue;
+
+        h5 {
+            margin-bottom: .8rem;
+        }
+
+        p {
+            opacity: .5;
+            margin: 1rem 0;
+        }
+    }
+
+}

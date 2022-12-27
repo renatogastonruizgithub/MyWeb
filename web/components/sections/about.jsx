@@ -6,7 +6,7 @@ import about from "../../styles/about.module.scss";
 const About = () => {
     const { list } = usePortfolio();
     return (
-        <section className={about.sectionAbout}>
+        <section className={about.sectionAbout} id="About">
                  <section className="container">
             <div className={about.containerAbout}>
                 <div className={about.containerTitle}>
