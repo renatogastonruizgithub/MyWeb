@@ -8,7 +8,7 @@ const Botn = ({ children, color, background, font }) => {
         fontSize: font
     };
     return (
-        <button className={styles.containerButton} style={styleProps}>
+        <button type="submit" className={styles.containerButton} style={styleProps}>
             {children}
         </button>
 

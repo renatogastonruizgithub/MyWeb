@@ -1,0 +1,121 @@
+@import "../styles/colors.scss";
+
+.sectionContact {
+    background-color: $orange;
+    position: relative;
+    padding: 3rem 1rem;
+    overflow: hidden;
+}
+
+.containerForm {
+    padding: 1rem 0;
+    margin-top: 3rem;
+
+    form {
+        width: 100%;
+
+        >div {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .inputContainer {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+
+            input[type="text"],
+            input[type="email"] {
+                color: $backgroundBlue;
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+                background-color: $white;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                padding: .5rem;
+                opacity: .8;
+
+                &:focus {
+                    outline: none;
+                    opacity: 1;
+                }
+            }
+
+            .effect~.focusBorder {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $violet;
+                transition: 0.4s;
+            }
+
+            .effect:focus~.focusBorder {
+                width: 100%;
+                transition: 0.4s;
+            }
+
+            textarea {
+                color: $backgroundBlue;
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+                background-color: $white;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                padding: .5rem;
+                opacity: .8;
+
+                &:focus {
+                    outline: none;
+                    opacity: 1;
+                }
+            }
+
+            .effectArea:focus~.focusBorderArea {
+                width: 100%;
+                transition: 0.4s;
+            }
+
+            .effectArea~.focusBorderArea {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $violet;
+                transition: 0.4s;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 2560px) {
+    .containerForm {
+        display: grid;
+        place-items: center;
+
+        form {
+            max-width: 20rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .inputContainer {
+                width: 100%;
+
+                input[type="text"] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
