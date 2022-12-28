@@ -19,7 +19,8 @@ const Certificated = () => {
             <section className='container'>           
                 <div className={styles.containerTitle}>
                         <h1>Certificateds</h1>
-                        <i className="bi bi-mortarboard"></i>
+                    <i className="bi bi-mortarboard"></i>
+                    
                     </div>
                 <div className={styles.containerSlider}>
                     <Swiper
