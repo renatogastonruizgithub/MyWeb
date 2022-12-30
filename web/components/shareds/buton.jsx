@@ -1,5 +1,5 @@
 import styles from "../../styles/button.module.scss";
-const Botn = ({ children, color, background, font }) => {
+const Botn = ({ children, color, background, font ,handleClick }) => {
 
 
     const styleProps = {
@@ -8,7 +8,7 @@ const Botn = ({ children, color, background, font }) => {
         fontSize: font
     };
     return (
-        <button type="submit" className={styles.containerButton} style={styleProps}>
+        <button onClick={handleClick} type="submit" className={styles.containerButton} style={styleProps}>
             {children}
         </button>
 

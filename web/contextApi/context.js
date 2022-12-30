@@ -9,6 +9,8 @@ export const usePortfolio = () => {
 
 export const ProviderComponent = ({ children }) => {
   const [list, setList] = useState([]);
+  const [details, setDetails] = useState([]);
+
 
   useEffect(() => {
     axios.get("http://localhost:5000/portafolio").then((res) => {
@@ -16,5 +18,12 @@ export const ProviderComponent = ({ children }) => {
     });
   }, [setList]);
 
-  return <contextApi.Provider value={{ list }}>{children}</contextApi.Provider>;
+  const idDetails=(id) => {
+      axios.get(`http://localhost:5000/projects/${id}`).then((res) => {
+       setDetails(res.data.body);          
+      });     
+  }
+  
+
+  return <contextApi.Provider value={{ list,details,idDetails }}>{children}</contextApi.Provider>;
 };
