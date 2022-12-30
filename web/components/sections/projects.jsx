@@ -1,8 +1,13 @@
 import styles from "../../styles/projects.module.scss";
 import { usePortfolio } from "../../contextApi/context";
-import Botn, { Buttons } from "../../components/shareds/buton";
+import Botn, { Buttons } from "../shareds/buton";
+import { useRouter } from "next/router";
 const Projects = () => {
     const { list } = usePortfolio();
+    const router = useRouter();
+    const details = (id) => {
+       router.push(`http://localhost:8080/projects/${id}`)
+    }
     return (
         <section className={styles.sectionProjects} id="Projects">
             <div className="container">
@@ -22,15 +27,16 @@ const Projects = () => {
                                         return (
                                             <div key={i}
 
-                                                className={styles.contentProjects} >
+                                                className={ styles.contentProjects} >
 
-                                                <div className={`a`}>
+                                                <div className={`${i%2==0?'clase2':'reverseProject'}`}>
                                                     <h2>{project.title}</h2>
                                                     <p>{project.text}</p>
                                                     <div className={styles.botonDestokp}>
                                                         <Botn color={"#171f2a"}
                                                             background={"#7ee787"}
                                                             font={"1.4rem"}
+                                                            handleClick={()=>details(project.id)}
                                                         >
                                                             <span>Saber mas</span>
                                                         </Botn>
