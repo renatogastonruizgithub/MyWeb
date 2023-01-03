@@ -1,0 +1,112 @@
+@import "../styles/colors.scss";
+
+.arrow {
+    padding: 7rem 0 0 1rem;
+    background-color: $backgroundBlue;
+
+    i {
+        color: $white;
+        font-size: 2rem;
+        cursor: pointer;
+    }
+}
+
+.sectionDetails {
+    background-color: $backgroundBlue;
+    padding: 3rem 1rem 4rem 1rem;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 1px;
+        height: 7%;
+        background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 20%, $white);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient($white, $violet 40%, #8f72c9 20%, $violet 80%, $violet);
+    }
+
+    .containerTitle {
+        position: relative;
+
+        h2 {
+            font-size: 3rem;
+            color: $white;
+            margin-bottom: 1.2rem;
+        }
+
+        i {
+            position: absolute;
+            left: -2.1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            color: $violet;
+
+        }
+    }
+
+    .containerDetailsTexto {
+        p {
+            font-size: 1.5rem;
+            overflow-wrap: break-word;
+            text-align: justify;
+            line-height: 2rem;
+            opacity: 0.8;
+        }
+    }
+
+    .containerSlider {
+        position: relative;
+        overflow: hidden;
+        padding: 3rem 0;
+        margin-top: 4rem;
+
+    }
+
+    .containerSkills {
+        margin-top: 4rem;
+
+        h2 {
+            margin-bottom: 1.8rem;
+            font-size: 1.5rem;
+        }
+
+        .skillDetails {
+            background-color: $white;
+
+            p {
+                color: $backgroundBlue;
+            }
+        }
+
+    }
+}
+
+
+//grid desktop laptop
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .containerDetails {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+        grid-auto-flow: dense;
+
+        .containerSlider {
+            margin: 0;
+        }
+    }
+
+
+}

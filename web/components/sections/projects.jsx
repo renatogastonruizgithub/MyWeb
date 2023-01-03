@@ -48,7 +48,9 @@ const Projects = () => {
                                                 <div className={styles.botonMobile}>
                                                     <Botn color={"#171f2a"}
                                                         background={"#7ee787"}
-                                                        font={"1.2rem"}>
+                                                        font={"1.2rem"}
+                                                        handleClick={()=>details(project.id)}
+                                                    >
                                                         <span>Saber mas</span>
                                                     </Botn>
                                                 </div>
