@@ -13,13 +13,13 @@ export const ProviderComponent = ({ children }) => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:5000/portafolio").then((res) => {
+    axios.get("https://mipaginaweb.fly.dev/portafolio").then((res) => {
       setList(res.data.body);
     });
   }, [setList]);
 
   const idDetails=(id) => {
-      axios.get(`http://localhost:5000/projects/${id}`).then((res) => {
+      axios.get(`https://mipaginaweb.fly.dev/projects/${id}`).then((res) => {
        setDetails(res.data.body);          
       });     
   }
