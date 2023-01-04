@@ -154,7 +154,16 @@ span {
   font-family: 'Lato', sans-serif;
 }
 
+.imgSlider {
+  width: 100% !important;
+  object-fit: contain;
+  display: block;
+}
 
+
+.next-prev-details {
+  color: #fafafa !important;
+}
 
 @media only screen and (min-width: 48em) {
   .container {
