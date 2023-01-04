@@ -134,8 +134,8 @@ table {
 .container {
   width: 89%;
   margin: 0 auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  /* padding-left: 1.5rem;
+  padding-right: 1.5rem; */
 }
 
 h1,
@@ -152,6 +152,17 @@ p,
 i,
 span {
   font-family: 'Lato', sans-serif;
+}
+
+.imgSlider {
+  width: 100% !important;
+  object-fit: contain;
+  display: block;
+}
+
+
+.next-prev-details {
+  color: #fafafa !important;
 }
 
 @media only screen and (min-width: 48em) {
@@ -174,4 +185,8 @@ span {
     margin: 0 auto
   }
 
+}
+
+.reverseProject {
+  grid-area: 1/2;
 }

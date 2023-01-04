@@ -1,3 +1,4 @@
+import ScrollTop from "../shareds/scrollTop";
 import Footer from "./footer";
 import Navbar from "./navbar";
 
@@ -7,7 +8,10 @@ export default function Layout({ children }) {
       <nav>
         <Navbar />
       </nav>
-      <main>{children}</main>
+      <main>
+        {children}
+        <ScrollTop />
+      </main>
       <footer>
         <Footer />
       </footer>

@@ -11,13 +11,26 @@ export const usePortfolio = () => {
 export const ProviderComponent = ({ children }) => {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [details, setDetails] = useState([]);
+
 
   useEffect(() => {
-    axios.get("http://localhost:5000/portafolio").then((res) => {
+    axios.get("https://mipaginaweb.fly.dev/portafolio").then((res) => {
       setList(res.data.body);
       setLoading(false);
     });
   }, [setList]);
 
-  return <contextApi.Provider value={{ list, loading }}>{loading && <Loading />}{children}</contextApi.Provider>
-}
+
+  const idDetails=(id) => {
+      axios.get(`https://mipaginaweb.fly.dev/projects/${id}`).then((res) => {
+        setDetails(res.data.body);   
+       setLoading(false); 
+      });     
+  }  
+ 
+ 
+
+  return <contextApi.Provider value={{ list,details,idDetails ,loading}}>{loading && <Loading />}{children}</contextApi.Provider>;
+};
+

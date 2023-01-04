@@ -5,13 +5,8 @@ const nextConfig = {
   sassOptions: {
     includePaths: [path.join(__dirname, "styles")],
   },
-  images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-      },
-    ],
+    images: {
+    domains: ['mipaginaweb.fly.dev','firebasestorage.googleapis.com']
   },
 };
 
