@@ -43,7 +43,7 @@ export default function Navbar() {
             {links.map((item) => {
               return (
                 <li key={item} className={styles.menuLinks}>
-                  <Link href={`#${item}`}> {item}</Link>                 
+                  <Link href={`/#${item}`}> {item}</Link>                 
                 </li>
               );
             })}
@@ -58,7 +58,7 @@ export default function Navbar() {
             links.map((item) => {
               return (              
                     <li key={item} >
-                     <Link href={`#${item}`}  onClick={() => setMenu(!menu)}>{item}</Link>   
+                     <Link href={`/#${item}`}  onClick={() => setMenu(!menu)}>{item}</Link>   
                   </li>
                 );
               })
