@@ -1,6 +1,7 @@
 /* Uncomment and set these variables to customize the grid. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+@import "../styles/colors.scss";
 
 html,
 body,
@@ -164,6 +165,29 @@ span {
 .next-prev-details {
   color: #fafafa !important;
 }
+
+.navScroller {
+  z-index: 3999;
+  backdrop-filter: blur(60px);
+  width: 100%;
+  height: 6rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.fondo {
+  li:nth-child(4) {
+    a {
+      color: $orange !important;
+
+      &::before {
+        background-color: $orange;
+      }
+    }
+  }
+}
+
 
 @media only screen and (min-width: 48em) {
   .container {
