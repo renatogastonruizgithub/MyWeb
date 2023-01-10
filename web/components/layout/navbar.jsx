@@ -6,13 +6,16 @@ import styles from "../../styles/navbar.module.scss";
 import Menu from "../shareds/menuMobile";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
+import { usePortfolio } from "../../contextApi/context";
 
 export default function Navbar() {
   const links = ["About", "Projects", "Certificates", "Contact"];
   const router = useRouter();
-  const[menu, setMenu]=useState(false)
+  const [menu, setMenu] = useState(false)
+  
+   const { visibleElement } = usePortfolio();
  
-
+ 
   return (
     <>
       <Head>
@@ -21,8 +24,11 @@ export default function Navbar() {
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"></link>
       </Head>
+    
+      <section className={`${visibleElement? " ":"navScroller"}`}>
       <section className="container">
-        <div className={styles.containerNav}>
+        <div className={styles.containerNav} >
+        
           <div className={styles.logoAndMenu}>
             <Image
               priority={true}
@@ -39,11 +45,11 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className={styles.contentMenuLinks}>
+          <div className={`${styles.contentMenuLinks} ${visibleElement? "fondo":"letrasNegra"}`}>
             {links.map((item) => {
               return (
                 <li key={item} className={styles.menuLinks}>
-                  <Link href={`#${item}`}> {item}</Link>                 
+                  <Link href={`/#${item}`}> {item}</Link>                 
                 </li>
               );
             })}
@@ -58,7 +64,7 @@ export default function Navbar() {
             links.map((item) => {
               return (              
                     <li key={item} >
-                     <Link href={`#${item}`}  onClick={() => setMenu(!menu)}>{item}</Link>   
+                     <Link href={`/#${item}`}  onClick={() => setMenu(!menu)}>{item}</Link>   
                   </li>
                 );
               })
@@ -71,6 +77,8 @@ export default function Navbar() {
           </span>
         </Menu>
       </section>
+      </section>
+      
       
     </>
   );

@@ -3,10 +3,10 @@ import { usePortfolio } from "../../contextApi/context";
 import styles from "../../styles/banner.module.scss";
 
 export default function Banner() {
-  const { list } = usePortfolio();
+  const { list,myRef } = usePortfolio();
 
   return (
-    <section className={styles.imgBanner}>
+    <section ref={myRef} className={styles.imgBanner}>
       {list.map((item) => {
         return (
           <div key={item.Home.id} className={styles.contentImgText}>

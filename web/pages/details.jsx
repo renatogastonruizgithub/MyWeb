@@ -13,7 +13,7 @@ import stylesSkill from "../styles/skills.module.scss";
 import Botn from "../components/shareds/buton";
 
 export default function Details() {
-  const { details } = usePortfolio();
+  const { details,myRef  } = usePortfolio();
   const router = useRouter()
   const swiper = useSwiper();
 
@@ -27,7 +27,7 @@ export default function Details() {
             ></i>
           </div>
         </div>
-        <section className={styles.sectionDetails}>
+        <section ref={myRef} className={styles.sectionDetails}>
 
           <div className="container">
             <div className={styles.containerDetails}>
