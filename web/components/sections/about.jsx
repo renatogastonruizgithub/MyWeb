@@ -11,7 +11,7 @@ const About = () => {
             <div className={about.containerAbout}>
                 <div className={about.containerTitle}>
                         <h1>About</h1>
-                        <i class="bi bi-person"></i>
+                       {/*  <i class="bi bi-person"></i> */}
                 </div>
                 
                 
@@ -27,10 +27,11 @@ const About = () => {
                         )
                     })
                     }
-                    <div>
-                        <i class="bi bi-github"></i>
-                        <i class="bi bi-linkedin"></i>
-                        <i class="bi bi-arrow-down-circle-fill"></i>
+                    <div className={about.social}>
+                        <div><i className="bi bi-github"></i></div>
+                        <div><i className="bi bi-linkedin"></i></div>
+                        <div><i className="bi bi-arrow-down-circle-fill"></i></div>                        
+                        
                     </div>
                     
             </div>

@@ -1,16 +1,13 @@
 import styles from "../../styles/projects.module.scss";
 import { usePortfolio } from "../../contextApi/context";
-
-import Botn from "../shareds/buton";
-import { useRouter } from "next/router";
+import Botn, { Buttons } from "../../components/shareds/buton";
+import { useRouter } from 'next/navigation';
 const Projects = () => {
-    const { list, idDetails } = usePortfolio();
-    const router = useRouter();
-
-    const details = (id) => {
+      const router = useRouter();
+    const { list ,idDetails} = usePortfolio();
+    const details=(id) => {        
         idDetails(id)
-       router.push(`http://localhost:8080/details`)
-
+        router.push("http://localhost:8080/details/")
     }
     return (
         <section className={styles.sectionProjects} id="Projects">
