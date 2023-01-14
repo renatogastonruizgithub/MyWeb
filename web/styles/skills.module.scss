@@ -1,16 +1,14 @@
  @import "../styles/colors.scss";
 
  .contentSkill {
-     display: flex;
-     flex-direction: row;
-     flex-wrap: wrap;
-     justify-content: space-between;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+     row-gap: 2rem;
+     column-gap: 1rem;
 
      .skill {
          display: inline-flex;
          align-items: center;
-         background-color: $backgroundBlue;
-         margin-bottom: .8rem;
          height: 40px;
          position: relative;
          overflow: hidden;
@@ -19,6 +17,9 @@
          border: none;
          position: relative;
          padding-right: .3rem;
+         background: #212121;
+         box-shadow: 5px 5px 10px rgb(25, 25, 25),
+             -5px -5px 10px rgb(60, 60, 60);
 
          p {
              width: 100%;
