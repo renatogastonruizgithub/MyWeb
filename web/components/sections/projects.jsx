@@ -3,9 +3,9 @@ import { usePortfolio } from "../../contextApi/context";
 import Botn, { Buttons } from "../../components/shareds/buton";
 import { useRouter } from 'next/navigation';
 const Projects = () => {
-      const router = useRouter();
-    const { list ,idDetails} = usePortfolio();
-    const details=(id) => {        
+    const router = useRouter();
+    const { list, idDetails } = usePortfolio();
+    const details = (id) => {
         idDetails(id)
         router.push("http://localhost:8080/details/")
     }
@@ -27,34 +27,34 @@ const Projects = () => {
                                             <div key={i}
 
 
-                                                className={ styles.contentProjects} >
+                                                className={styles.contentProjects} >
 
-                                                <div className={`${i%2==0?'clase2':'reverseProject'}`}>
-                                                
-                                            
+                                                <div className={`${i % 2 == 0 ? 'clase2' : 'reverseProject'}`}>
+
+
                                                     <h2>{project.title}</h2>
                                                     <p>{project.text}</p>
                                                     <div className={styles.botonDestokp}>
-                                                        <Botn color={"#171f2a"}
-                                                            background={"#7ee787"}
-                                                            font={"1.4rem"}
+                                                        <Botn color={"#fafafa"}
+                                                            background={"#060606"}
+                                                            font={1.4 + "rem"}
 
-                                                            handleClick={()=>details(project.id)}
-                                                            
+                                                            handleClick={() => details(project.id)}
+
                                                         >
                                                             <span>Saber mas</span>
                                                         </Botn>
-                                                        
+
                                                     </div>
 
                                                 </div>
 
                                                 <div className={styles.contentImg} ><img src={project.imagen} /></div>
                                                 <div className={styles.botonMobile}>
-                                                    <Botn color={"#171f2a"}
-                                                        background={"#7ee787"}
-                                                        font={"1.2rem"}
-                                                        handleClick={()=>details(project.id)}
+                                                    <Botn color={"#fafafa"}
+                                                        background={"#060606"}
+                                                        font={1.2 + "rem"}
+                                                        handleClick={() => details(project.id)}
                                                     >
                                                         <span>Saber mas</span>
                                                     </Botn>
