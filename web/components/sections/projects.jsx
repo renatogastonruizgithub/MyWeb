@@ -13,8 +13,7 @@ const Projects = () => {
         <section className={styles.sectionProjects} id="Projects">
             <div className="container">
                 <div className={styles.containerTitle}>
-                    <h1>Proyectos</h1>
-                    <i class="bi bi-file-code"></i>
+                    <h1>Proyectos</h1>                    
                 </div>
                 {
                     list.map((item, i) => {
