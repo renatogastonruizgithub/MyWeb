@@ -4,15 +4,16 @@
     padding: 4rem 1rem;
     overflow: hidden;
     position: relative;
+    background-color: $backgroundBlue;
 
     &::after {
         content: "";
         position: absolute;
         top: 0;
         left: 1rem;
-        width: 1px;
+        width: 2px;
         height: 7%;
-        background: linear-gradient($green, $green 10%, $pink 50%, $pink 20%, $white);
+        background: linear-gradient($orange, $orange 10%, $pink 50%, $pink 20%, $backgroundBlue);
     }
 
     &::before {
@@ -20,9 +21,9 @@
         position: absolute;
         top: 28vh;
         left: 1rem;
-        width: 1px;
+        width: 2px;
         height: 100%;
-        background: linear-gradient($white, $pink 40%, #f38f8a 20%, $pink 80%, $pink);
+        background: linear-gradient($backgroundBlue, $pink 40%, $pink 20%, $violet 80%, $violet);
     }
 
     .containerSlider {
@@ -37,7 +38,7 @@
 
         h1 {
             font-size: 2.3rem;
-            color: $backgroundBlue;
+            color: $white;
             margin-bottom: 1.2rem;
         }
 
@@ -88,7 +89,7 @@
             h1 {
                 margin-bottom: 4rem;
                 font-size: 5rem;
-                color: $backgroundBlue;
+                color: $white;
             }
 
             i {
@@ -130,7 +131,7 @@
             h1 {
                 margin-bottom: 4rem;
                 font-size: 5rem;
-                color: $backgroundBlue;
+                color: $white;
             }
 
             i {

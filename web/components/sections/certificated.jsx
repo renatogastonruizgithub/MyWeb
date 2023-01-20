@@ -18,8 +18,7 @@ const Certificated = () => {
         <section className={styles.containerCertificated} id="Certificates">
             <section className='container'>           
                 <div className={styles.containerTitle}>
-                        <h1>Certificateds</h1>
-                    <i className="bi bi-mortarboard"></i>
+                        <h1>Certificates</h1>                 
                     
                     </div>
                 <div className={styles.containerSlider}>
@@ -82,8 +81,8 @@ const Certificated = () => {
                         }
                 
                     </Swiper>
-                        <div className="swiper-button-next" />
-                        <div className="swiper-button-prev" />               
+                        <div className="swiper-button-next next-prev-details-Certificates" />
+                        <div className="swiper-button-prev next-prev-details-Certificates" />               
 
                 </div>
               </section>       
