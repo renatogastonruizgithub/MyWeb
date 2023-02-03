@@ -7,9 +7,9 @@ const Contact = () => {
     return (
         <section className={styles.sectionContact} id="Contact">
             <section className="container">
-                <div className={styles.containerTitle}>
-                    <h1>Contact</h1>
-                    <i className="bi bi-person"></i>
+                <div className={styles.wrapperContact}>
+                      <div className={styles.containerTitle}>
+                    <h1>Contact</h1>                  
                     <p>No dude en ponerse en contacto conmigo enviando el siguiente formulario y me pondré en contacto con usted lo antes posible.</p>
                 </div>
 
@@ -71,8 +71,8 @@ const Contact = () => {
                                     {touched.motivo && errors.motivo && <div>{errors.motivo}</div>}
                                 </div>
 
-                                <Botn color={"#171f2a"}
-                                    background={"#7ee787"}
+                                <Botn color={"#fafafa"}
+                                    background={"#060606"}
                                     font={"1.2rem"}>
                                     <span>Enviar</span>
                                 </Botn>
@@ -82,6 +82,8 @@ const Contact = () => {
                     </Formik>
                     {enviado && <div>Enviado con exito</div>}
                 </div>
+                </div>
+              
 
             </section>
 
