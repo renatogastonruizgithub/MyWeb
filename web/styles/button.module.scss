@@ -10,8 +10,8 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    border: 1px solid $green;
-    background: linear-gradient(to right, #7ee7871f 1%, transparent 40%, transparent 60%, #7ee7871f 100%);
+    border: 1px solid $white;
+    background: linear-gradient(to right, #ffffff66 1%, transparent 40%, transparent 60%, #ffffff66 100%);
 
     box-shadow: inset 0 0 10px #7ee7873f, 0 0 9px 3px #7ee78722;
 
@@ -28,7 +28,7 @@
     }
 
     &:hover {
-        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+        box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.6), 0 0 9px 3px rgba(255, 255, 255, 0.2);
     }
 
     &::before {
@@ -39,7 +39,7 @@
         height: 100%;
         top: 0;
         transition: transform .4s ease-in-out;
-        background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+        background: linear-gradient(to right, transparent 1%, rgba(255, 255, 255, 0.1) 40%, rgba(255, 255, 255, 0.1) 60%, transparent 100%);
     }
 
     &:hover::before {
