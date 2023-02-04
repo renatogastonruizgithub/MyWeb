@@ -4,6 +4,18 @@
     background-color: $backgroundBlue;
     padding: 3rem 0 1.5rem;
     color: $white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 11%;
+        background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
+    }
 
     hr {
         height: 1px;
@@ -52,7 +64,19 @@
 
 }
 
-
+@media only screen and (min-width: 48em) {
+    .sectionFooter {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 11%;
+            background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+    }
+}
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
     .sectionFooter {
@@ -84,6 +108,18 @@
                 grid-area: 1 / 5 / 2 / 6;
             }
 
+        }
+    }
+
+    .sectionFooter {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 11%;
+            background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
         }
     }
 }
