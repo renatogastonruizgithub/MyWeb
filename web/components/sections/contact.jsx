@@ -2,6 +2,7 @@ import styles from "../../styles/contact.module.scss";
 import Botn from "../shareds/buton";
 import { Formik } from 'formik';
 import { useState } from "react";
+import axios from "axios";
 const Contact = () => {
     const [enviado, setEnviado] = useState(false)
     return (
@@ -40,10 +41,12 @@ const Contact = () => {
                             return errores
                         }}
                         onSubmit={(valores, { resetForm }) => {
-                            resetForm()
-                            setEnviado(true)
+                           
                             //setTimeout(() => setEnviado(false), 2000)
-                            console.log(valores)
+                             axios.post(`https://mipaginaweb.fly.dev/email`,valores).then((res) => {
+                                resetForm()
+                                setEnviado(true)
+                             });
                         }}
 
                     >
@@ -51,29 +54,30 @@ const Contact = () => {
                             <form onSubmit={handleSubmit}>
                                 <div>
                                     <div className={styles.inputContainer}>
-                                        <input className={styles.effect} type="text" name="nombre" placeholder="Nombre" value={values.nombre} onChange={handleChange} handleBlur={handleBlur} to />
+                                        <input className={`${touched.nombre && errors.nombre? 'errorInput' :styles.effect}`} type="text" name="nombre" placeholder="Nombre" value={values.nombre} onChange={handleChange} handleBlur={handleBlur} to />
                                         <span className={styles.focusBorder}></span>
                                     </div>
-                                    {touched.nombre && errors.nombre && <div>{errors.nombre}</div>}
+                                    {touched.nombre && errors.nombre && <div className={styles.errors}>{errors.nombre}</div>}
                                 </div>
                                 <div>
                                     <div className={styles.inputContainer}>
-                                        <input className={styles.effect} type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} handleBlur={handleBlur} />
+                                        <input className={`${touched.email && errors.email ? 'errorInput' :styles.effect}`} type="email" name="email" placeholder="Email" value={values.email} onChange={handleChange} handleBlur={handleBlur} />
                                         <span className={styles.focusBorder}></span>
                                     </div>
-                                    {touched.email && errors.email && <div>{errors.email}</div>}
+                                    {touched.email && errors.email && <div className={styles.errors}>{errors.email}</div>}
                                 </div>
                                 <div>
                                     <div className={styles.inputContainer}>
-                                        <textarea className={styles.effectArea} placeholder="motivo" name="motivo" cols="20" rows="8" value={values.motivo} onChange={handleChange} handleBlur={handleBlur} />
+                                        <textarea className={`${touched.motivo && errors.motivo ? 'errorInput' :styles.effectArea}`} placeholder="Motivo" name="motivo" cols="10" rows="8" value={values.motivo} onChange={handleChange} handleBlur={handleBlur} />
                                         <span className={styles.focusBorderArea}></span>
                                     </div>
-                                    {touched.motivo && errors.motivo && <div>{errors.motivo}</div>}
+                                    {touched.motivo && errors.motivo && <div className={styles.errors}>{errors.motivo}</div>}
                                 </div>
 
                                 <Botn color={"#fafafa"}
                                     background={"#060606"}
-                                    font={"1.2rem"}>
+                                        font={"1.2rem"}
+                                        handleClick={() => handleSubmit}>                                         
                                     <span>Enviar</span>
                                 </Botn>
                             </form>
