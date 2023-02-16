@@ -5,6 +5,9 @@ import { useState } from "react";
 import axios from "axios";
 const Contact = () => {
     const [enviado, setEnviado] = useState(false)
+    const [errorAlEnviar, seterrorAlEnviar] = useState(false)
+    const [loader, seteLoader] = useState(false)
+    const [disableForm, setDisableForm] = useState(false)
     return (
         <section className={styles.sectionContact} id="Contact">
             <section className="container">
@@ -40,18 +43,30 @@ const Contact = () => {
                             }
                             return errores
                         }}
-                        onSubmit={(valores, { resetForm }) => {
-                           
-                            //setTimeout(() => setEnviado(false), 2000)
-                             axios.post(`https://mipaginaweb.fly.dev/email`,valores).then((res) => {
-                                resetForm()
-                                setEnviado(true)
-                             });
-                        }}
+                            onSubmit={(valores, { resetForm }) => {                        
+                                seteLoader(true)
+                                setDisableForm(true)
+                            axios.post(`https://mipaginaweb.fly.dev/email`, valores)
+                                .then((res) => {                                  
+                                    setEnviado(true)                                    
+                                    resetForm()
+                                    seteLoader(false)
+                                    setTimeout(() => {setEnviado(false),setDisableForm(false)}, 3000)
+                                })
+                                .catch(() => {
+                                    seterrorAlEnviar(true)
+                                    setTimeout(() => {seterrorAlEnviar(false),seteLoader(false)}, 10000)
+                                    resetForm()
+                                })  
+                             
+                        }} 
 
                     >
                         {({ handleSubmit, errors, touched, values, handleChange, handleBlur }) => (
-                            <form onSubmit={handleSubmit}>
+                           
+                               
+                            
+                            <form   className={`${disableForm? `${styles.disableForm}` : ' '} ${styles.form}` } onSubmit={handleSubmit}>
                                 <div>
                                     <div className={styles.inputContainer}>
                                         <input className={`${touched.nombre && errors.nombre? 'errorInput' :styles.effect}`} type="text" name="nombre" placeholder="Nombre" value={values.nombre} onChange={handleChange} handleBlur={handleBlur} to />
@@ -81,10 +96,22 @@ const Contact = () => {
                                     <span>Enviar</span>
                                 </Botn>
                             </form>
+                                
                         )}
 
                     </Formik>
-                    {enviado && <div>Enviado con exito</div>}
+                        <div className={styles.contentSuccess}>
+                            {loader && <div className={styles.loader}></div>}
+                            {enviado && <div className={styles.success}>
+                                <span>Enviado con exito</span>                                
+                                </div>}                    
+                            
+                             {errorAlEnviar && <div className={styles.menssageError}>Ocurrio un error! por favor cumuniquese al
+                                <a href="https://wa.me/3512087800?text=hola" target="_blank"> 3512087800</a>
+                            </div>}
+                        </div>
+                        
+                   
                 </div>
                 </div>
               
