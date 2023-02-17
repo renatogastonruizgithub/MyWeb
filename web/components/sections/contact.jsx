@@ -7,7 +7,7 @@ const Contact = () => {
     const [enviado, setEnviado] = useState(false)
     const [errorAlEnviar, seterrorAlEnviar] = useState(false)
     const [loader, seteLoader] = useState(false)
-
+    const [disableForm, setDisableForm] = useState(false)
     return (
         <section className={styles.sectionContact} id="Contact">
             <section className="container">
@@ -44,12 +44,14 @@ const Contact = () => {
                             return errores
                         }}
                             onSubmit={(valores, { resetForm }) => {                        
-                                seteLoader(true)    
+                                seteLoader(true)
+                                setDisableForm(true)
                             axios.post(`https://mipaginaweb.fly.dev/email`, valores)
                                 .then((res) => {                                  
-                                    setEnviado(true)
-                                    resetForm() 
-                                    setTimeout(() => {setEnviado(false),seteLoader(false)}, 4000)
+                                    setEnviado(true)                                    
+                                    resetForm()
+                                    seteLoader(false)
+                                    setTimeout(() => {setEnviado(false),setDisableForm(false)}, 3000)
                                 })
                                 .catch(() => {
                                     seterrorAlEnviar(true)
@@ -57,14 +59,14 @@ const Contact = () => {
                                     resetForm()
                                 })  
                              
-                        }}
+                        }} 
 
                     >
                         {({ handleSubmit, errors, touched, values, handleChange, handleBlur }) => (
                            
                                
                             
-                            <form   className={`${loader? `${styles.disableForm}` : ' '} ${styles.form}` } onSubmit={handleSubmit}>
+                            <form   className={`${disableForm? `${styles.disableForm}` : ' '} ${styles.form}` } onSubmit={handleSubmit}>
                                 <div>
                                     <div className={styles.inputContainer}>
                                         <input className={`${touched.nombre && errors.nombre? 'errorInput' :styles.effect}`} type="text" name="nombre" placeholder="Nombre" value={values.nombre} onChange={handleChange} handleBlur={handleBlur} to />
@@ -98,14 +100,18 @@ const Contact = () => {
                         )}
 
                     </Formik>
-                        { loader  &&<div className={styles.contentSuccess}>
-                             {enviado&& <span> Enviado con exito</span> }                    
-                            <div  className={styles.success}></div>
-                        </div>}
+                        <div className={styles.contentSuccess}>
+                            {loader && <div className={styles.loader}></div>}
+                            {enviado && <div className={styles.success}>
+                                <span>Enviado con exito</span>                                
+                                </div>}                    
+                            
+                             {errorAlEnviar && <div className={styles.menssageError}>Ocurrio un error! por favor cumuniquese al
+                                <a href="https://wa.me/3512087800?text=hola" target="_blank"> 3512087800</a>
+                            </div>}
+                        </div>
                         
-                    {errorAlEnviar && <div className={styles.errors}>Ocurrio un error! por favor cumuniquese al
-                    <a href="https://wa.me/3512087800?text=hola" target="_blank"> 3512087800</a>
-                    </div>}
+                   
                 </div>
                 </div>
               
