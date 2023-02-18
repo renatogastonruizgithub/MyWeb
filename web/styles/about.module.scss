@@ -22,14 +22,6 @@
             margin-bottom: 1.2rem;
         }
 
-        /*   i {
-            position: absolute;
-            left: -2.1rem;
-            top: 1rem;
-            font-size: 1.5rem;
-            color: $violet;
-
-        } */
     }
 
     .social {
@@ -49,7 +41,7 @@
             border-radius: 50%;
 
             i {
-                color: $violet;
+                color: $orange;
                 font-size: 2rem;
                 cursor: pointer;
 
@@ -82,6 +74,22 @@
     position: relative;
     padding: 3rem 0;
     overflow: hidden;
+
+    .items {
+        list-style: "-";
+        color: $white;
+        opacity: .7;
+        padding-left: .4rem;
+        margin-top: 1rem;
+
+        li {
+            p {
+                padding-left: .4rem;
+
+            }
+
+        }
+    }
 
     &::after {
         content: "";
@@ -129,8 +137,8 @@
         }
 
         .containerTitle {
-            i {
-                left: -2.2rem;
+            h1 {
+                font-size: 5rem;
             }
         }
     }
@@ -193,7 +201,7 @@
         .containerTitle {
 
             h1 {
-                font-size: 5rem;
+                font-size: 7rem;
                 color: $white;
                 margin-bottom: 2.5rem;
             }
