@@ -44,8 +44,8 @@ const Contact = () => {
                             return errores
                         }}
                             onSubmit={(valores, { resetForm }) => {                        
-                                seteLoader(true)
-                                setDisableForm(true)
+                                 seteLoader(true)
+                                setDisableForm(true)                               
                             axios.post(`https://mipaginaweb.fly.dev/email`, valores)
                                 .then((res) => {                                  
                                     setEnviado(true)                                    
@@ -55,9 +55,10 @@ const Contact = () => {
                                 })
                                 .catch(() => {
                                     seterrorAlEnviar(true)
-                                    setTimeout(() => {seterrorAlEnviar(false),seteLoader(false)}, 10000)
+                                    seteLoader(false)
+                                    setTimeout(() => {seterrorAlEnviar(false),setDisableForm(false)}, 10000)
                                     resetForm()
-                                })  
+                                })   
                              
                         }} 
 
@@ -106,8 +107,13 @@ const Contact = () => {
                                 <span>Enviado con exito</span>                                
                                 </div>}                    
                             
-                             {errorAlEnviar && <div className={styles.menssageError}>Ocurrio un error! por favor cumuniquese al
-                                <a href="https://wa.me/3512087800?text=hola" target="_blank"> 3512087800</a>
+                            {errorAlEnviar && <div className={styles.error}>
+                                <div className={styles.menssageError}>
+                                    <span> Ocurrio un error, por favor cumuniquese al</span>
+                                    
+                                    <a href="https://wa.me/3512087800?text=hola" target="_blank"><i class="bi bi-whatsapp"></i> 3512087800</a>
+                                </div>
+                               
                             </div>}
                         </div>
                         

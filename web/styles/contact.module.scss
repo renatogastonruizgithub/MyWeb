@@ -231,8 +231,14 @@ $text-light: #fefefe;
 .errors {
     color: $white;
     padding-top: .3rem;
-    font-size: .9rem;
-    padding-left: .4rem;
+    font-size: .8rem;
+
+    a,
+    i {
+        color: $white;
+        padding-top: .5rem;
+        padding-left: .6rem;
+    }
 }
 
 .disableForm {
@@ -250,7 +256,6 @@ $text-light: #fefefe;
         color: $white;
         padding-top: .3rem;
         font-size: 1.2rem;
-        padding-left: .4rem;
         animation: fadeIn ease-in 1s forwards;
         -webkit-animation: fadeIn ease-in 1s forwards;
         opacity: 0;
@@ -319,8 +324,6 @@ $text-light: #fefefe;
     position: relative;
     -webkit-animation: vibrate ease-in 0.5s forwards;
     animation: vibrate ease-in 0.5s forwards;
-    -webkit-animation-delay: 2.5s;
-    animation-delay: 2.5s;
 
     &:before {
         color: #fff;
@@ -330,13 +333,14 @@ $text-light: #fefefe;
         font-weight: bold;
         text-align: center;
         left: 50%;
-        top: 50%;
+        top: -52%;
         -webkit-transform: translate(-50%, -50%) scale(0);
         transform: translate(-50%, -50%) scale(0);
         -webkit-animation: error ease-in 0.5s forwards;
         animation: error ease-in 0.5s forwards;
-        animation-delay: 2.5s;
+
     }
+
 }
 
 @keyframes spin {
@@ -360,7 +364,7 @@ $text-light: #fefefe;
 
     to {
         transform: translate(-50%, -50%) scale(1);
-        background-color: #f44336;
+
     }
 }
 
@@ -372,7 +376,7 @@ $text-light: #fefefe;
     85%,
     100% {
         left: 0;
-        background-color: #f44336;
+
     }
 
     10%,
@@ -380,7 +384,7 @@ $text-light: #fefefe;
     90%,
     70% {
         left: -2px;
-        background-color: #f44336;
+
     }
 
     20%,
@@ -388,7 +392,7 @@ $text-light: #fefefe;
     80%,
     95% {
         left: 2px;
-        background-color: #f44336;
+
     }
 }
 
