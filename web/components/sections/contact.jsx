@@ -44,10 +44,9 @@ const Contact = () => {
                             return errores
                         }}
                             onSubmit={(valores, { resetForm }) => {                        
-                               /*  seteLoader(true)*/
-                                setDisableForm(true) 
-                                 seterrorAlEnviar(true)
-                           /*  axios.post(`https://mipaginaweb.fly.dev/emails`, valores)
+                                 seteLoader(true)
+                                setDisableForm(true)                               
+                            axios.post(`https://mipaginaweb.fly.dev/email`, valores)
                                 .then((res) => {                                  
                                     setEnviado(true)                                    
                                     resetForm()
@@ -59,7 +58,7 @@ const Contact = () => {
                                     seteLoader(false)
                                     setTimeout(() => {seterrorAlEnviar(false),setDisableForm(false)}, 10000)
                                     resetForm()
-                                })   */
+                                })   
                              
                         }} 
 
