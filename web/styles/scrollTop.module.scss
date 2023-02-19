@@ -6,10 +6,10 @@ $tam: 40px;
     width: $tam;
     height: $tam;
     border-radius: 50%;
-    background-color: $violet;
+    background-color: $white;
     display: grid;
     place-items: center;
-    opacity: .8;
+    opacity: .5;
     right: 3%;
     top: 90vh;
     z-index: 1000;
@@ -18,7 +18,8 @@ $tam: 40px;
     cursor: pointer;
 
     i {
-        color: $white;
+        color: $backgroundBlack;
+        font-weight: 900;
     }
 
     &:hover {
