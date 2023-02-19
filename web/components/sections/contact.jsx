@@ -90,8 +90,8 @@ const Contact = () => {
                                     {touched.motivo && errors.motivo && <div className={styles.errors}>{errors.motivo}</div>}
                                 </div>
 
-                                <Botn color={"#fafafa"}
-                                    background={"#060606"}
+                                <Botn color={"#fff"}
+                                    background={"#f99135"}
                                         font={"1.2rem"}
                                         handleClick={() => handleSubmit}>                                         
                                     <span>Enviar</span>
