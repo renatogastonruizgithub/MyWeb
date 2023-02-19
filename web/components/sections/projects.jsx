@@ -34,8 +34,8 @@ const Projects = () => {
                                                     <h2>{project.title}</h2>
                                                     <p>{project.text}</p>
                                                     <div className={styles.botonDestokp}>
-                                                        <Botn color={"#fafafa"}
-                                                            background={"#060606"}
+                                                        <Botn color={"#fff"}
+                                                            background={"#f99135"}
                                                             font={1.4 + "rem"}
 
                                                             handleClick={() => details(project.id)}
@@ -50,8 +50,8 @@ const Projects = () => {
 
                                                 <div className={styles.contentImg} ><img src={project.imagen} /></div>
                                                 <div className={styles.botonMobile}>
-                                                    <Botn color={"#fafafa"}
-                                                        background={"#060606"}
+                                                    <Botn color={"#fff"}
+                                                        background={"#f99135"}
                                                         font={1.2 + "rem"}
                                                         handleClick={() => details(project.id)}
                                                     >
