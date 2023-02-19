@@ -11,18 +11,25 @@ const About = () => {
             <div className={about.containerAbout}>
                 <div className={about.containerTitle}>
                         <h1>About</h1>
-                       {/*  <i class="bi bi-person"></i> */}
-                </div>
-                
-                
+                      
+                </div>  
                 {
                     list.map((item,index) => {
                      
                         return (
                             
                             <div key={item}>
-                                <p>{ item.About.texto}</p>
-                               <p>{ item.About.cumple}</p>
+                                <p>{item.About.texto}</p>
+                                <ul className={about.items}>
+                                    <li>
+                                        <p>{ item.About.cumple}</p>
+                                    </li>
+                                    <li>
+                                        <p>{ item.About.ciudad}</p>
+                                    </li>
+                                </ul>
+                                
+                               
                             </div>
                         )
                     })

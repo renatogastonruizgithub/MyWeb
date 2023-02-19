@@ -7,24 +7,22 @@
      column-gap: 1rem;
 
      .skill {
-         display: inline-flex;
+         display: flex;
+         justify-content: space-around;
          align-items: center;
-         height: 40px;
          position: relative;
          overflow: hidden;
          color: $white;
          border-radius: 25px;
          border: none;
          position: relative;
-         padding-right: .3rem;
-         background: #212121;
-         box-shadow: 5px 5px 10px rgb(25, 25, 25),
-             -5px -5px 10px rgb(60, 60, 60);
+         padding: 0 .1rem;
+         border: 1px solid #ffffff81;
 
          p {
              width: 100%;
              margin: 0;
-             padding: 0 .7rem;
+             padding: 0 .5rem;
              font-size: 1rem;
              color: $white;
          }
@@ -35,7 +33,7 @@
              display: block;
              position: relative;
              overflow: hidden;
-
+             margin-right: .5rem;
 
              img {
                  height: 100%;
