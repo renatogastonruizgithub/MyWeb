@@ -173,7 +173,7 @@ span {
 
 .navScroller {
   z-index: 3999;
-  backdrop-filter: blur(60px);
+  background-color: $backgroundBlue;
   width: 100%;
   height: 6rem;
   position: fixed;
@@ -196,9 +196,38 @@ span {
 .errorInput {
   color: $white;
   background-color: #f34c4c !important;
+
 }
 
 
+
+p {
+  opacity: .5 !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000000;
+  opacity: .5;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #fafafa74;
+  border-radius: 20px;
+  opacity: .5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+
+  background: $white;
+}
 
 @media only screen and (min-width: 48em) {
   .container {
