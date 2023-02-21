@@ -60,13 +60,20 @@
 @media only screen and (min-width: 48em) {
     .containerCertificated {
 
+        .containerTitle {
+            h1 {
+                margin-bottom: 4rem;
+                font-size: 5rem;
+                color: $white;
+            }
+        }
 
         &::after {
             content: "";
             position: absolute;
             top: 0;
             left: 3%;
-            width: 1px;
+            width: 2px;
             height: 7%;
 
         }
@@ -76,7 +83,7 @@
             position: absolute;
             top: 28vh;
             left: 3%;
-            width: 1px;
+            width: 2px;
             height: 100%;
 
         }
@@ -88,7 +95,7 @@
         .containerTitle {
             h1 {
                 margin-bottom: 4rem;
-                font-size: 5rem;
+                font-size: 7rem;
                 color: $white;
             }
 
@@ -130,7 +137,7 @@
         .containerTitle {
             h1 {
                 margin-bottom: 4rem;
-                font-size: 5rem;
+                font-size: 7rem;
                 color: $white;
             }
 

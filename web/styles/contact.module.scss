@@ -40,7 +40,7 @@
         left: 1rem;
         width: 2px;
         height: 100%;
-        background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $backgroundBlue 10%);
+        background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
     }
 }
 
@@ -75,7 +75,7 @@
                 border-radius: 20px;
                 outline: none;
                 padding: .5rem;
-                opacity: .8;
+                opacity: .5;
 
                 &:focus {
                     outline: none;
@@ -108,7 +108,7 @@
                 border-radius: 20px;
                 outline: none;
                 padding: .5rem;
-                opacity: .8;
+                opacity: .5;
 
                 &:focus {
                     outline: none;
@@ -156,6 +156,18 @@
 }
 
 @media only screen and (min-width: 48em) {
+    .wrapperContact {
+
+
+        .containerTitle {
+            h1 {
+                font-size: 5rem;
+
+            }
+
+        }
+    }
+
     .sectionContact {
         &::after {
             content: "";
@@ -174,13 +186,18 @@
             left: 3%;
             width: 2px;
             height: 100%;
-            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $backgroundBlue 10%);
+            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
         }
     }
 }
 
 @media only screen and (min-width: 1024px) and (max-width: 2560px) {
-
+    .containerForm {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin: 0;
+    }
 
     .wrapperContact {
         display: grid;
@@ -190,7 +207,7 @@
 
         .containerTitle {
             h1 {
-                font-size: 5rem;
+                font-size: 7rem;
                 color: $white;
                 margin-bottom: 4rem;
             }
@@ -216,7 +233,7 @@
             left: 5%;
             width: 3px;
             height: 100%;
-            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $backgroundBlue 10%);
+            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
         }
     }
 }

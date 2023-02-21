@@ -45,9 +45,9 @@ const Certificated = () => {
                         }}
                         freeMode={true}
                         modules={[ Autoplay,Navigation]}
-                        initialSlide={1}                  
+                        initialSlide={0}                  
                         spaceBetween={20}
-                        centeredSlides={true}
+                        centeredSlides={false}
                     
                         onSlideChange={() => console.log('slide change')}
                         onSwiper={(swiper) => console.log(swiper)}>

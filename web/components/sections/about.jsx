@@ -53,7 +53,7 @@ const About = () => {
                                     item.Skills.map((skill) => {
                                         return (
                                             <div className={styles.skill}>
-                                                <p>{skill.nombre}</p>
+                                                <span>{skill.nombre}</span>
                                                 <div><img src={skill.link} /></div>
                                                 
                                             </div>

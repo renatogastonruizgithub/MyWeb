@@ -76,7 +76,7 @@ export default function Details() {
                   }}
                   freeMode={true}
                   modules={[Autoplay, Navigation]}
-                  initialSlide={1}
+                  initialSlide={0}
                   spaceBetween={0}
                   centeredSlides={true}
 
