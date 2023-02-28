@@ -7,12 +7,13 @@ import Menu from "../shareds/menuMobile";
 import { useState } from "react";
 import { useRouter } from 'next/navigation';
 import { usePortfolio } from "../../contextApi/context";
-
+import CustomLink from "../shareds/customLink"
 export default function Navbar() {
   const links = ["About", "Projects", "Certificates", "Contact"];
-  const router = useRouter();
-  const [menu, setMenu] = useState(false)
   
+  const [menu, setMenu] = useState(false)
+   const router = useRouter()
+
    const { visibleElement } = usePortfolio();
  
  
@@ -48,8 +49,11 @@ export default function Navbar() {
           <div className={`${styles.contentMenuLinks} ${visibleElement? "fondo":"letrasNegra"}`}>
             {links.map((item) => {
               return (
+
                 <li key={item} className={styles.menuLinks}>
-                  <Link href={`/#${item}`}> {item}</Link>                 
+                  <CustomLink href={`/#${item}`} >
+                   {item}
+                  </CustomLink>                 
                 </li>
               );
             })}
