@@ -78,12 +78,12 @@ $heightBar: 2px;
             }
         }
 
-        .menuLinks:nth-child(4) {
+        /* .menuLinks:nth-child(4) {
 
             a {
                 color: $orange;
             }
-        }
+        } 
 
         a {
             margin-left: 1rem;
@@ -106,7 +106,7 @@ $heightBar: 2px;
                 }
 
             }
-        }
+        }*/
 
     }
 }
@@ -117,12 +117,6 @@ $heightBar: 2px;
         display: flex;
         align-items: center;
         justify-content: space-between;
-
-        /*  .menuLinks:nth-child(4) {
-            a {
-                color: $orange;
-            }
-        } */
 
         a {
             font-size: 1.5rem;
@@ -135,18 +129,18 @@ $heightBar: 2px;
                 content: " ";
                 z-index: 2000;
                 left: 0;
-                width: 0;
+                width: 100%;
                 height: 3px;
                 background-color: $white;
                 bottom: -6px;
+                opacity: 0;
             }
 
             &:hover {
                 &::before {
-                    width: 100%;
+                    opacity: 1;
                     animation: slidein .4s ease-in
                 }
-
             }
         }
     }
