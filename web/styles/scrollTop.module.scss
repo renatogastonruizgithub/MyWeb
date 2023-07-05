@@ -1,0 +1,38 @@
+$tam: 40px;
+@import "../styles/colors.scss";
+
+.containerTop {
+    position: fixed;
+    width: $tam;
+    height: $tam;
+    border-radius: 50%;
+    background-color: $white;
+    display: grid;
+    place-items: center;
+    opacity: .5;
+    right: 3%;
+    top: 90vh;
+    z-index: 1000;
+    animation-name: fadeInOpacity;
+    animation-duration: .1s;
+    cursor: pointer;
+
+    i {
+        color: $backgroundBlack;
+        font-weight: 900;
+    }
+
+    &:hover {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

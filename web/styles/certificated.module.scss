@@ -1,0 +1,153 @@
+@import "../styles/colors.scss";
+
+.containerCertificated {
+    padding: 4rem 1rem;
+    overflow: hidden;
+    position: relative;
+    background-color: $backgroundBlue;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 7%;
+        background: linear-gradient($orange, $orange 10%, $pink 50%, $pink 20%, $backgroundBlue);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient($backgroundBlue, $pink 40%, $pink 20%, $violet 80%, $violet);
+    }
+
+    .containerSlider {
+        position: relative;
+        overflow: hidden;
+        padding: 3rem 1rem;
+
+    }
+
+    .containerTitle {
+        position: relative;
+
+        h1 {
+            font-size: 2.3rem;
+            color: $white;
+            margin-bottom: 1.2rem;
+        }
+
+        i {
+            position: absolute;
+            left: -2.1rem;
+            top: .5rem;
+            font-size: 1.5rem;
+            color: $pink;
+
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (min-width: 48em) {
+    .containerCertificated {
+
+        .containerTitle {
+            h1 {
+                margin-bottom: 4rem;
+                font-size: 5rem;
+                color: $white;
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 7%;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 3%;
+            width: 2px;
+            height: 100%;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 62em) {
+    .containerCertificated {
+        .containerTitle {
+            h1 {
+                margin-bottom: 4rem;
+                font-size: 7rem;
+                color: $white;
+            }
+
+            i {
+                left: -10%;
+                font-size: 2rem;
+                top: 0;
+                transform: translateY(60%);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 7%;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 5%;
+            width: 3px;
+            height: 100%;
+
+        }
+    }
+}
+
+@media only screen and (min-width: 75em) {
+    .containerCertificated {
+
+        padding: 4rem 0;
+
+        .containerTitle {
+            h1 {
+                margin-bottom: 4rem;
+                font-size: 7rem;
+                color: $white;
+            }
+
+            i {
+                left: -8%;
+                font-size: 2rem;
+                top: 0;
+                transform: translateY(60%);
+            }
+        }
+    }
+
+}

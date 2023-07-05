@@ -1,0 +1,70 @@
+@import "../styles/colors.scss";
+
+.containerButton {
+    position: relative;
+    overflow: hidden;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    letter-spacing: 1px;
+
+    svg {
+        margin-left: 1rem;
+        transition: 0.2s;
+        position: relative;
+        width: 15px;
+        transition-delay: 0.2s;
+    }
+
+    &:hover svg {
+        transform: translateX(10px);
+    }
+
+    &:hover {
+        /* box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.6), 0 0 9px 3px rgba(255, 255, 255, 0.2);
+ */
+        color: $white !important;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: -4em;
+        width: 4em;
+        height: 100%;
+        top: 0;
+        transition: transform .4s ease-in-out;
+        background: linear-gradient(to right, transparent 1%, rgba(255, 255, 255, 0.182) 40%, rgba(255, 255, 255, 0.182) 60%, transparent 100%);
+    }
+
+    &:hover::before {
+        transform: translateX(15em);
+
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .botonDestokp {
+        display: none;
+    }
+
+    .containerButton {
+        margin-top: 2.5rem;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .botonMobile {
+        display: none;
+    }
+
+    .containerButton {
+        margin-top: 3rem;
+    }
+}

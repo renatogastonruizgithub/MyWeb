@@ -1,0 +1,441 @@
+@import "../styles/colors.scss";
+
+.sectionContact {
+    background-color: $backgroundBlue;
+    position: relative;
+    padding: 3rem 1rem;
+    overflow: hidden;
+
+    .containerTitle {
+        h1 {
+            font-size: 3rem;
+            color: $white;
+            margin-bottom: 1.2rem;
+        }
+
+        p {
+            color: $white;
+            font-size: 1.5rem;
+            overflow-wrap: break-word;
+            text-align: justify;
+            line-height: 2rem;
+            opacity: 0.8;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 7%;
+        background: linear-gradient($violet, $violet 10%, $violet 50%, $violet 10%, $backgroundBlue);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
+    }
+}
+
+.containerForm {
+    padding: 1rem 0;
+    margin-top: 3rem;
+
+    form {
+        width: 100%;
+
+        >div {
+            margin-bottom: 1.5rem;
+            width: 100%;
+        }
+
+        .inputContainer {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+
+
+
+            input[type="text"],
+            input[type="email"] {
+                color: $backgroundBlue;
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+                background-color: $white;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                padding: .5rem;
+                opacity: .5;
+
+                &:focus {
+                    outline: none;
+                    opacity: 1;
+                }
+            }
+
+            .effect~.focusBorder {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $violet;
+                transition: 0.4s;
+            }
+
+            .effect:focus~.focusBorder {
+                width: 100%;
+                transition: 0.4s;
+            }
+
+            textarea {
+                color: $backgroundBlue;
+                width: 100%;
+                box-sizing: border-box;
+                letter-spacing: 1px;
+                background-color: $white;
+                border: none;
+                border-radius: 20px;
+                outline: none;
+                padding: .5rem;
+                opacity: .5;
+
+                &:focus {
+                    outline: none;
+                    opacity: 1;
+                }
+            }
+
+            .effectArea:focus~.focusBorderArea {
+                width: 100%;
+                transition: 0.4s;
+            }
+
+            .effectArea~.focusBorderArea {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: $violet;
+                transition: 0.4s;
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 2560px) {
+    .containerForm {
+        display: grid;
+        place-items: center;
+
+        form {
+            max-width: 20rem;
+
+            .inputContainer {
+                width: 100%;
+
+                input[type="text"] {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+}
+
+@media only screen and (min-width: 48em) {
+    .wrapperContact {
+
+
+        .containerTitle {
+            h1 {
+                font-size: 5rem;
+
+            }
+
+        }
+    }
+
+    .sectionContact {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 7%;
+            background: linear-gradient($violet, $violet 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 3%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .containerForm {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        margin: 0;
+    }
+
+    .wrapperContact {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 6rem;
+        grid-auto-flow: dense;
+
+        .containerTitle {
+            h1 {
+                font-size: 7rem;
+                color: $white;
+                margin-bottom: 4rem;
+            }
+
+        }
+    }
+
+    .sectionContact {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 7%;
+            background: linear-gradient($violet, $violet 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 5%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient($backgroundBlue 10%, $orange 40%, $orange 30%, $green 60%, $green 10%);
+        }
+    }
+}
+
+$button-width: 150px;
+$spinner-width: $button-width/6;
+$blue: #0076d3;
+$btn-bg: #8BC34A;
+$text-light: #fefefe;
+
+.menssageError,
+.errors {
+    color: $white;
+    padding-top: .3rem;
+    font-size: .8rem;
+
+    a,
+    i {
+        color: $white;
+        padding-top: .5rem;
+        padding-left: .6rem;
+    }
+}
+
+.disableForm {
+    display: none;
+}
+
+.contentSuccess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+
+    span {
+        margin-bottom: .5rem;
+        color: $white;
+        padding-top: .3rem;
+        font-size: 1.2rem;
+        animation: fadeIn ease-in 1s forwards;
+        -webkit-animation: fadeIn ease-in 1s forwards;
+        opacity: 0;
+    }
+}
+
+.loader {
+    position: relative;
+    min-width: 0;
+    border-radius: 50%;
+    color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+
+    &:after {
+        position: absolute;
+        content: '';
+        width: $spinner-width;
+        height: $spinner-width;
+        border: 4px solid $text-light;
+        border-radius: 50%;
+        border-left-color: transparent;
+        right: -50%;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        animation: spin ease-in 5s forwards;
+        animation-name: spin;
+        -webkit-animation-name: spin;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transition-timing-function: ease-in-out;
+        -webkit-transition-timing-function: linear;
+        animation-duration: 3s;
+        -webkit-animation-duration: 3s;
+        animation-fill-mode: forwards;
+        -webkit-animation-fill-mode: forwards;
+    }
+}
+
+.success {
+    position: relative;
+
+    &:before {
+        position: absolute;
+        content: '';
+        width: $spinner-width;
+        height: $spinner-width/2;
+        border: 4px solid $text-light;
+        border-right: 0;
+        border-top: 0;
+        left: -2rem;
+        top: 50%;
+        -webkit-transform: translate(-50%, -50%) rotate(0deg) scale(0);
+        transform: translate(-50%, -50%) rotate(0deg) scale(0);
+        -webkit-animation: success ease-in 0.15s forwards;
+        animation: success ease-in 0.15s forwards;
+
+    }
+}
+
+.error {
+    position: relative;
+    -webkit-animation: vibrate ease-in 0.5s forwards;
+    animation: vibrate ease-in 0.5s forwards;
+
+    &:before {
+        color: #fff;
+        position: absolute;
+        content: '!';
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-align: center;
+        left: 50%;
+        top: -52%;
+        -webkit-transform: translate(-50%, -50%) scale(0);
+        transform: translate(-50%, -50%) scale(0);
+        -webkit-animation: error ease-in 0.5s forwards;
+        animation: error ease-in 0.5s forwards;
+
+    }
+
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+
+    90% {
+        transform: translate(-50%, -50%) rotate(1080deg) scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes error {
+    from {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scale(1);
+
+    }
+}
+
+@keyframes vibrate {
+
+    0%,
+    30%,
+    60%,
+    85%,
+    100% {
+        left: 0;
+
+    }
+
+    10%,
+    40%,
+    90%,
+    70% {
+        left: -2px;
+
+    }
+
+    20%,
+    50%,
+    80%,
+    95% {
+        left: 2px;
+
+    }
+}
+
+@keyframes success {
+    from {
+        transform: translate(-50%, -50%) rotate(0) scale(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+        opacity: 1;
+
+    }
+}
+
+.form {
+    position: relative;
+}

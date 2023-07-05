@@ -1,0 +1,269 @@
+@import "../styles/colors.scss";
+
+
+
+.imgBanner {
+    height: 100vh;
+    background-color: $backgroundBlue;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 1rem;
+        width: 2px;
+        height: 15vh;
+
+        background: linear-gradient($backgroundBlue, $white 50%, $orange 70%, $orange 80%, $orange);
+    }
+
+    .contentImgText {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column-reverse;
+        width: 89%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5rem;
+    }
+
+    .contentImg {
+        height: 140px;
+        width: 140px;
+        border-radius: 50%;
+        padding: 1px;
+        background-color: $orange;
+        overflow: hidden;
+
+        img {
+            background-color: $orange;
+            mix-blend-mode: luminosity;
+            border-radius: 50%;
+            height: 140px;
+            width: 140px;
+            object-fit: contain;
+        }
+    }
+
+    .bannerTexts {
+        position: relative;
+        margin-top: 2rem;
+        color: $white;
+        padding: 0 1rem;
+        text-align: justify;
+        overflow-wrap: break-word;
+
+        h1 {
+            font-size: 1.1rem;
+
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            opacity: .5;
+            margin-top: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            opacity: .5;
+            -webkit-text-stroke: 1px $white;
+            -webkit-text-fill-color: transparent;
+            margin-top: .5rem;
+            letter-spacing: 2px;
+        }
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .imgBanner {
+        &::before {
+            left: 3%;
+        }
+
+        .contentImg {
+            height: 200px;
+            width: 200px;
+
+            img {
+                height: 200px;
+                width: 200px;
+            }
+        }
+
+        .bannerTexts {
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    .imgBanner {
+        /*  background-color: $backgroundBlue; */
+        overflow: hidden;
+
+        /*      &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 11%;
+            background-color: $orange;
+            z-index: 0;
+
+        } */
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 3px;
+            height: 7rem;
+        }
+
+        .contentImgText {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 0;
+        }
+
+        .contentImg {
+            height: 100vh;
+            width: 50%;
+            border-radius: 0;
+            background-color: $backgroundBlue;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                border-radius: 0;
+                background-color: $backgroundBlue;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .bannerTexts {
+            text-align: left;
+            margin-top: 5rem;
+
+            h1 {
+                font-size: 2.5rem;
+
+            }
+
+            h2 {
+                font-size: 2rem;
+                margin-top: 2rem;
+
+            }
+
+            h3 {
+                font-size: 2.1rem;
+                margin-top: .2rem;
+            }
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 1025px) and (max-width: 2560px) {
+
+    .imgBanner {
+        /*      background-color: $backgroundBlack; */
+        overflow: hidden;
+
+        /*    &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            height: 100vh;
+            width: 11%;
+            background-color: $orange;
+            z-index: 0;
+
+        } */
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 5%;
+            width: 3px;
+            height: 7rem;
+        }
+
+        .contentImgText {
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 0;
+        }
+
+        .contentImg {
+            height: 100vh;
+            width: 50%;
+            border-radius: 0;
+            background-color: $backgroundBlack;
+            position: relative;
+            overflow: hidden;
+
+            img {
+                position: relative;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                border-radius: 0;
+                background-color: $backgroundBlack;
+                mix-blend-mode: luminosity;
+            }
+        }
+
+        .bannerTexts {
+            text-align: left;
+            margin-top: 5rem;
+
+            h1 {
+                font-size: 2.5rem;
+                color: $white;
+
+            }
+
+            h2 {
+                font-size: 2rem;
+                color: $white;
+                opacity: .5;
+                margin-top: 3rem;
+
+            }
+
+            h3 {
+                font-size: 2.2rem;
+                color: $white;
+                opacity: .5;
+                margin-top: .8rem;
+
+            }
+        }
+    }
+}

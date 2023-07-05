@@ -1,0 +1,50 @@
+ @import "../styles/colors.scss";
+
+ .contentSkill {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+     row-gap: 2rem;
+     column-gap: 1rem;
+
+     .skill {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         position: relative;
+         overflow: hidden;
+         color: $white;
+         border-radius: 25px;
+         border: none;
+         position: relative;
+         padding: 0 .1rem;
+         border: 1px solid #ffffff4b;
+
+         span {
+             width: 100%;
+             margin: 0;
+             padding: 0 .5rem;
+             font-size: 1rem;
+             color: $white;
+         }
+
+         >div {
+             height: 40px;
+             width: 40px;
+             display: block;
+             position: relative;
+             overflow: hidden;
+             margin-right: .5rem;
+
+
+
+             img {
+                 height: 100%;
+                 width: 100%;
+                 display: block;
+                 object-fit: contain;
+
+             }
+         }
+
+     }
+ }

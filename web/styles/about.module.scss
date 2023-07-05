@@ -1,0 +1,259 @@
+@import "../styles/colors.scss";
+
+.containerAbout {
+    padding: 0 1rem;
+    color: $white;
+
+
+    p {
+        font-size: 1.5rem;
+        overflow-wrap: break-word;
+        text-align: justify;
+        line-height: 2rem;
+        opacity: .8;
+    }
+
+    .containerTitle {
+        position: relative;
+
+        h1 {
+            font-size: 3rem;
+            color: $white;
+            margin-bottom: 1.2rem;
+        }
+
+    }
+
+    .social {
+        margin-top: 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        >div {
+
+            height: 30px;
+            width: 30px;
+            background-color: $white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+
+            i {
+                color: $orange;
+                font-size: 2rem;
+                cursor: pointer;
+
+                &:hover {
+                    color: $violet;
+                }
+
+
+            }
+        }
+
+
+    }
+
+}
+
+.containerSkills {
+    padding: 0 1rem;
+    padding-top: 4rem;
+
+    h2 {
+        color: $white;
+        margin-bottom: 2rem;
+        font-size: 1.8rem;
+    }
+}
+
+.sectionAbout {
+    background-color: $backgroundBlue;
+    position: relative;
+    padding: 3rem 0;
+    overflow: hidden;
+
+    .items {
+        list-style: "-";
+        color: $white;
+        opacity: .7;
+        padding-left: .4rem;
+        margin-top: 1rem;
+
+        li {
+            p {
+                padding-left: .4rem;
+
+            }
+
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 7%;
+        background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 10%, $backgroundBlue);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient($backgroundBlue 10%, $violet 40%, $violet 30%, $green 60%);
+    }
+
+}
+
+//grid desktop laptop
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .sectionAbout {
+        >section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 6rem;
+        }
+    }
+
+
+}
+
+@media only screen and (min-width: 48em) {
+
+
+    .containerAbout {
+        padding: 0;
+
+        .social {
+            width: 10rem;
+        }
+
+        .containerTitle {
+            h1 {
+                font-size: 5rem;
+            }
+        }
+    }
+
+    .containerSkills {
+        padding-top: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .sectionAbout {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 11%;
+            background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 26vh;
+            left: 3%;
+            width: 2px;
+            height: 100%;
+            background: linear-gradient($backgroundBlue 10%, $violet 40%, $violet 30%, $green 60%);
+
+        }
+
+    }
+}
+
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .containerAbout {
+        padding: 0;
+
+        .social {
+            margin-top: 1.9rem;
+            width: 10rem;
+
+            >div {
+                i {
+                    font-size: 2rem;
+
+                    /*   margin-right: 1.2rem; */
+                    &:hover {
+                        color: $backgroundBlue;
+                        background-color: transparent;
+                        transition: .3s ease;
+
+                    }
+                }
+            }
+        }
+
+        .containerTitle {
+
+            h1 {
+                font-size: 7rem;
+                color: $white;
+                margin-bottom: 2.5rem;
+            }
+
+            i {
+                left: -17%;
+                top: 0;
+                transform: translateY(60%);
+                font-size: 2rem;
+                z-index: 2;
+            }
+        }
+    }
+
+    .containerSkills {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        h2 {
+            color: $white;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+        }
+    }
+
+    .sectionAbout {
+        padding: 9rem 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 14%;
+            background: linear-gradient($orange, $orange 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 26vh;
+            left: 5%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient($backgroundBlue 10%, $violet 40%, $violet 30%, $green 60%);
+        }
+
+
+
+    }
+
+}

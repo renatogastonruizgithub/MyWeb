@@ -1,0 +1,202 @@
+@import "../styles/colors.scss";
+
+.sectionProjects {
+    padding: 4rem 1rem;
+    background-color: $backgroundBlue;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 4%;
+        background: linear-gradient($green, $green 10%, $green 50%, $green 20%, $backgroundBlue);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 28vh;
+        left: 1rem;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient($backgroundBlue, #9ce9a3bc 20%, $green 30%, $orange 80%, $orange);
+    }
+
+    .containerTitle {
+        position: relative;
+
+        h1 {
+            font-size: 3rem;
+            color: $white;
+            margin-bottom: 2.2rem;
+        }
+
+        i {
+            position: absolute;
+            left: -2.1rem;
+            top: 1rem;
+            font-size: 1.5rem;
+            color: $green;
+        }
+
+    }
+}
+
+.contentProjects {
+    margin-bottom: 4rem;
+
+
+    .a {
+        background-color: bisque;
+    }
+
+    h2 {
+        margin-bottom: 1.5rem;
+        font-size: 1.8rem;
+    }
+
+    p {
+        font-size: 1.5rem;
+        overflow-wrap: break-word;
+        text-align: justify;
+        line-height: 2rem;
+        opacity: 0.8;
+    }
+
+    .contentImg {
+        margin-top: 1.5rem;
+
+        img {
+            max-height: 400px;
+            width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+
+
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .botonDestokp {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .botonMobile {
+        display: none;
+
+    }
+}
+
+@media only screen and (min-width: 48em) and (max-width: 1023px) {
+    .sectionProjects {
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 4%;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 3%;
+            width: 2px;
+            height: 100%;
+        }
+
+        .containerTitle {
+            h1 {
+                font-size: 5rem;
+            }
+
+            i {
+                left: -2.2rem;
+            }
+        }
+    }
+
+
+}
+
+//grid desktop laptop
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .sectionProjects {
+        padding: 3rem 0;
+
+        .contentProjects {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 6rem;
+            grid-auto-flow: dense;
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+
+        .a0 {
+            grid-area: 1/2 !important;
+        }
+
+        .contentImg {
+            /* display: grid;
+            place-items: center; */
+            margin-top: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 4%;
+
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 28vh;
+            left: 5%;
+            width: 3px;
+            height: 100%;
+        }
+
+        .containerTitle {
+            h1 {
+                margin-bottom: 4rem;
+                font-size: 7rem;
+            }
+
+            i {
+                left: -8%;
+                font-size: 2rem;
+                top: 0;
+                transform: translateY(60%);
+            }
+        }
+
+    }
+
+    .contentProjects {
+        margin-bottom: 6rem;
+    }
+
+}

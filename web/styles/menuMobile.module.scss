@@ -1,0 +1,105 @@
+@import "../styles/colors.scss";
+
+.containerMenu {
+    position: fixed;
+    left: 0;
+    height: 100vh !important;
+    width: 100%;
+    z-index: 5000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+    overflow: hidden;
+
+    >div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 60vh;
+
+        >li {
+            list-style: none;
+
+            a {
+                font-size: 2rem;
+                color: $white;
+                cursor: pointer;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: " ";
+                    z-index: 8000;
+                    left: 0;
+                    width: 0;
+                    height: 2px;
+                    background-color: $white;
+                    bottom: -4px;
+                }
+
+                &:hover {
+                    &::before {
+                        width: 100%;
+                        animation: slidein .4s ease-in
+                    }
+
+                }
+            }
+        }
+    }
+
+    >span {
+        position: absolute;
+        right: 8%;
+        z-index: 100;
+        top: 2.5rem;
+        color: $white;
+        font-size: 32px;
+        opacity: .8;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+
+        &:nth-child(2)::before {
+            content: " ";
+            position: absolute;
+            top: 50%;
+            height: 2px;
+            width: 45px;
+            background-color: $white;
+            transform: rotate(45deg);
+            left: -5px;
+        }
+
+        &:nth-child(2)::after {
+            content: " ";
+            position: absolute;
+            bottom: 50%;
+            height: 2px;
+            width: 45px;
+            background-color: $white;
+            transform: rotate(-45deg);
+            left: -5px;
+        }
+    }
+}
+
+@keyframes slidein {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    .containerMenu {
+        >span {
+            right: 6%;
+        }
+    }
+}

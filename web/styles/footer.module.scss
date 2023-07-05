@@ -1,0 +1,125 @@
+@import "../styles/colors.scss";
+
+.sectionFooter {
+    background-color: $backgroundBlue;
+    padding: 3rem 0 1.5rem;
+    color: $white;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 1rem;
+        width: 2px;
+        height: 11%;
+        background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
+    }
+
+    hr {
+        height: 1px;
+        border-style: none;
+        border-width: 0;
+        background-color: $white;
+        opacity: .4;
+        margin-top: 2rem;
+    }
+
+    .firma {
+        text-align: center;
+        opacity: .8;
+    }
+
+
+    .footer {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+
+        >div,
+        img,
+        p {
+            font-size: 1.1rem;
+            text-align: center;
+            margin: .8rem;
+            opacity: 1;
+        }
+
+        .containerSocial {
+
+            a {
+                color: $white;
+
+                i {
+                    font-size: 1.8rem;
+                    margin-left: 1.8rem;
+                }
+            }
+
+        }
+    }
+
+}
+
+@media only screen and (min-width: 48em) {
+    .sectionFooter {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 3%;
+            width: 2px;
+            height: 11%;
+            background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 2560px) {
+    .sectionFooter {
+        hr {
+            margin: 0;
+            opacity: .2;
+        }
+
+        .firma {
+            margin-top: 1rem;
+        }
+
+        .footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+
+            img {
+                grid-area: 1 / 1 / 2;
+            }
+
+            p {
+                grid-area: 2 / 1 / 3 / 6;
+            }
+
+            .containerSocial {
+                grid-area: 1 / 5 / 2 / 6;
+            }
+
+        }
+    }
+
+    .sectionFooter {
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            width: 3px;
+            height: 11%;
+            background: linear-gradient($green, $green 10%, $violet 50%, $violet 10%, $backgroundBlue);
+        }
+    }
+}
